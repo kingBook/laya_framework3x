@@ -9,9 +9,6 @@ export abstract class State extends Laya.Script implements IState {
     public onStateEnter(fsm: Fsm): void {
     }
 
-    public onStateFixedUpdate(fsm: Fsm): void {
-    }
-
     public onStateUpdate(fsm: Fsm): void {
     }
     

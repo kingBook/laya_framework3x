@@ -1,5 +1,5 @@
 
-import { NodeUtil } from "../../framework/runtime/utils/NodeUtil";
+import { NodeUtil } from "../../framework/runtime/utils/Node2dUtil";
 import { AppFsm } from "./AppFsm";
 import { AppGlobalVariables } from "./AppGlobalVariables";
 
@@ -29,7 +29,7 @@ export class App extends Laya.Script {
     }
 
     onDestroy(): void {
-        App._instance = null;
+        App._instance = undefined;
     }
 
 

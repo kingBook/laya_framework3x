@@ -1,4 +1,8 @@
 {
+  "resolution": {
+    "designWidth": 1080,
+    "designHeight": 720
+  },
   "3D": {
     "lightClusterCount": {
       "x": 12,

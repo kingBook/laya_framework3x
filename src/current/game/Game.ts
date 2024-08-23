@@ -1,5 +1,5 @@
 import { State } from "../../framework/runtime/objs/fsm/State";
-import { NodeUtil } from "../../framework/runtime/utils/NodeUtil";
+import { NodeUtil } from "../../framework/runtime/utils/Node2dUtil";
 import { App } from "../app/App";
 import { GameFsm } from "./GameFsm";
 import { GameGlobalVariables } from "./GameGlobalVariables";

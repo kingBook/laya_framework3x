@@ -13,7 +13,7 @@ export abstract class Fsm extends Laya.Script {
 
     /** 状态发生改变后的回调函数 */
     protected _onStateChanged: (old: State, current: State) => void;
-    protected _onStateChangedThis:any;
+    protected _onStateChangedThis?:any;
     protected _currentState: IState;
 
     public get currentState(): IState {
@@ -29,7 +29,7 @@ export abstract class Fsm extends Laya.Script {
      * @param onStateChanged 状态改变后的回调函数
      * @param onStateChangedThis 状态改变后的回调函数绑定的 this 对象
      */
-    public init(onStateChanged: (old: State, current: State) => void = null, onStateChangedThis:any=null): void {
+    public init(onStateChanged?: (old: State, current: State) => void, onStateChangedThis?:any): void {
         this.addState(StateDefault);
         this._onStateChanged = onStateChanged;
         this._onStateChangedThis=onStateChangedThis;
@@ -52,7 +52,7 @@ export abstract class Fsm extends Laya.Script {
      * @param onChangedThis 状态改变后的回调函数绑定的 this 对象
      * @returns 
      */
-    public changeStateTo<T extends State>(toState: new () => T, onChanged: (old: State, current: State) => void = null, onChangedThis:any=null): void {
+    public changeStateTo<T extends State>(toState: new () => T, onChanged?: (old: State, current: State) => void, onChangedThis?:any): void {
         let state = this._states.get(toState.prototype.constructor.name);
         //if (this._currentState === state) return;
         let old = this._currentState;
@@ -76,9 +76,9 @@ export abstract class Fsm extends Laya.Script {
     }
 
     public onDestroy(): void {
-        this._currentState = null;
-        this._onStateChanged = null;
-        this._states = null;
+        //this._currentState = null;
+        //this._onStateChanged = null;
+        //this._states = null;
     }
 
 }
