@@ -1,7 +1,7 @@
 
-import { NodeUtil } from "../../framework/runtime/utils/Node2dUtil";
+import { EventManager } from "../../framework/runtime/objs/event/EventManager";
+import { NodeUtil } from "../../framework/runtime/utils/NodeUtil";
 import { AppFsm } from "./AppFsm";
-import { AppGlobalVariables } from "./AppGlobalVariables";
 
 const { regClass, property } = Laya;
 
@@ -11,17 +11,17 @@ export class App extends Laya.Script {
     declare owner: Laya.Sprite | Laya.Sprite3D;
 
     private static _instance: App;
+    private _eventManager: EventManager;
     private _fsm: AppFsm;
-    private _global: AppGlobalVariables;
 
     public static get instance(): App { return App._instance; }
     public get fsm(): AppFsm { return this._fsm; }
-    public get global(): AppGlobalVariables { return this._global; }
+    public get eventManager(): EventManager { return this._eventManager; }
 
     onAwake(): void {
         App._instance=this;
+        this._eventManager = NodeUtil.addNodeComponent(EventManager, this.owner);
         this._fsm = NodeUtil.addNodeComponent(AppFsm, this.owner);
-        this._global = NodeUtil.addNodeComponent(AppGlobalVariables, this.owner);
     }
 
     onStart() {
