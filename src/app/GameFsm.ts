@@ -1,6 +1,7 @@
-import { Fsm } from "../../framework/runtime/objs/fsm/Fsm";
-import { StateGameLevel } from "./gameStates/StateGameLevel";
-import { StateGameTitle } from "./gameStates/StateGameTitle";
+import { Fsm } from "../framework/runtime/objs/fsm/Fsm";
+import { StateGameLevel } from "./StateGameLevel";
+import { StateGameTitle } from "./StateGameTitle";
+
 
 const { regClass, property } = Laya;
 

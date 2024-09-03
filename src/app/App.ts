@@ -1,7 +1,7 @@
-
-import { EventManager } from "../../framework/runtime/objs/event/EventManager";
-import { NodeUtil } from "../../framework/runtime/utils/NodeUtil";
+import { EventManager } from "../framework/runtime/objs/event/EventManager";
+import { NodeUtil } from "../framework/runtime/utils/NodeUtil";
 import { AppFsm } from "./AppFsm";
+
 
 const { regClass, property } = Laya;
 

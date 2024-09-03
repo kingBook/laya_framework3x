@@ -1,5 +1,6 @@
-import { Fsm } from "../../../framework/runtime/objs/fsm/Fsm";
-import { State } from "../../../framework/runtime/objs/fsm/State";
+import { Fsm } from "../framework/runtime/objs/fsm/Fsm";
+import { State } from "../framework/runtime/objs/fsm/State";
+
 
 const { regClass, property } = Laya;
 

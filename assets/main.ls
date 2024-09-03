@@ -30,8 +30,8 @@
       "height": 100,
       "_$comp": [
         {
-          "_$type": "7bad1742-6eed-4d8d-81c0-501dc5bf03d6",
-          "scriptPath": "../src/current/app/App.ts"
+          "_$type": "913a39a9-4528-4307-b135-002d12110f3b",
+          "scriptPath": "../src/app/App.ts"
         }
       ]
     }

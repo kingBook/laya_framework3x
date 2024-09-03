@@ -1,6 +1,6 @@
-import { State } from "../../framework/runtime/objs/fsm/State";
-import { NodeUtil } from "../../framework/runtime/utils/NodeUtil";
-import { App } from "../app/App";
+
+import { State } from "../framework/runtime/objs/fsm/State";
+import { NodeUtil } from "../framework/runtime/utils/NodeUtil";
 import { GameFsm } from "./GameFsm";
 
 const { regClass, property } = Laya;

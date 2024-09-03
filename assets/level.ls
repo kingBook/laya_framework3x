@@ -87,6 +87,21 @@
           ]
         }
       ]
+    },
+    {
+      "_$id": "e22o1ph4",
+      "_$type": "Sprite",
+      "name": "Level",
+      "x": 496,
+      "y": 316,
+      "width": 100,
+      "height": 100,
+      "_$comp": [
+        {
+          "_$type": "6163e868-8df2-4571-80aa-1ba2601a6d15",
+          "scriptPath": "../src/current/game/Level.ts"
+        }
+      ]
     }
   ]
 }

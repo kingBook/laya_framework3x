@@ -1,5 +1,5 @@
-import { Fsm } from "../../framework/runtime/objs/fsm/Fsm";
-import { Game } from "../game/Game";
+import { Fsm } from "../framework/runtime/objs/fsm/Fsm";
+import { Game } from "./Game";
 
 
 const { regClass, property } = Laya;
