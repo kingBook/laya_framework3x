@@ -16,4 +16,5 @@ export class GameFsm extends Fsm {
         this.init();
         this.changeStateTo(StateGameTitle);
     }
+    
 }

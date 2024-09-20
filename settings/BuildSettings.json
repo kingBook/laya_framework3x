@@ -6,6 +6,7 @@
     "res://50c8e504-d88d-44c3-8ffd-20b7b738e4e5",
     "res://fb3a00e6-1ab3-4677-97f2-82cffcc84a35"
   ],
+  "subpackages": [],
   "android": {
     "targetArchitectures": {
       "_$type": true,
