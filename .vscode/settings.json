@@ -17,5 +17,20 @@
 	"workbench.sideBar.location": "right",
 	"window.zoomLevel": 0,
 	"csharp.format.enable": true,
-	"files.encoding": "utf8bom"
+	"files.encoding": "utf8bom",
+	"workbench.colorCustomizations": {
+        "[Default Light+]": {
+            "activityBar.background": "#dddddd",
+            "activityBar.foreground": "#333333"
+        },
+        "[One Monokai]": {
+            "editorHoverWidget.highlightForeground": "#2aaaff",
+			"editorLineNumber.foreground": "#818181"
+        }
+    },
+	"editor.semanticTokenColorCustomizations":{
+        "[One Monokai]": {
+            "enabled": true
+        }
+    }
 }
