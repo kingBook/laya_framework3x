@@ -11,7 +11,7 @@ export class StateGameTitle extends State {
     public onStateEnter(fsm: Fsm): void {
         console.log("StateGameTitle::onStateEnter();");
         
-        Laya.Scene.open("title.ls", false);
+        
         
     }
 }

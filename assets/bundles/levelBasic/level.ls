@@ -101,6 +101,19 @@
           "_$type": "6163e868-8df2-4571-80aa-1ba2601a6d15",
           "scriptPath": "../src/current/game/Level.ts"
         }
+      ],
+      "_$child": [
+        {
+          "_$id": "nimd8fvr",
+          "_$type": "Text",
+          "name": "Text",
+          "width": 491,
+          "height": 205,
+          "text": "level",
+          "fontSize": 188,
+          "color": "#FFFFFF",
+          "leading": 2
+        }
       ]
     }
   ]

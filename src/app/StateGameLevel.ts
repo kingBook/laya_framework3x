@@ -7,6 +7,8 @@ const { regClass, property } = Laya;
 @regClass()
 export class StateGameLevel extends State {
     public onStateEnter(fsm: Fsm): void {
-        Laya.Scene.open("level.ls", false);
+        Laya.loader.loadPackage("bundles/levelBasic").then(()=>{
+            Laya.Scene.open("bundles/levelBasic/level.ls", false);
+        });
     }
 }
