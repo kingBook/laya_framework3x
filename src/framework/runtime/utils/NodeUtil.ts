@@ -1,7 +1,4 @@
-const { regClass, property } = Laya;
-
-//@regClass()
-export class NodeUtil extends Laya.Script {
+export class NodeUtil {
 
     public static addNodeComponent<T extends Laya.Component>(t: new () => T, bind: Laya.Node): T {
         let is3d = bind instanceof Laya.Sprite3D;

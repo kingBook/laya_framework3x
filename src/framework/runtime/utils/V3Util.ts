@@ -1,15 +1,12 @@
 import { MathUtil } from "./MathUtil";
 
-const { regClass, property } = Laya;
-
 interface IV3 {
     x: number;
     y: number;
     z: number;
 }
 
-//@regClass()
-export class V3Util extends Laya.Script {
+export class V3Util {
 
     /** 向量加法 */
     public static add<T extends IV3>(out: T, a: IV3, b: IV3) {

@@ -1,9 +1,6 @@
 import { MathUtil } from "./MathUtil";
 
-const { regClass, property } = Laya;
-
-//@regClass()
-export class V2Util extends Laya.Script {
+export class V2Util {
 
     /** 向量加法 */
     public static add<T extends Laya.IV2>(out: T, a: T, b: T): T {
@@ -194,9 +191,9 @@ export class V2Util extends Laya.Script {
         out.y = num * inNormal.y + inDirection.y;
         return out;
     }
-    
-    public static fromRotation<T extends Laya.IV2>(out:T, rotation:number):T{
-        let radian = rotation*Math.PI/180;
+
+    public static fromRotation<T extends Laya.IV2>(out: T, rotation: number): T {
+        let radian = rotation * Math.PI / 180;
         out.x = Math.cos(radian);
         out.y = Math.sin(radian);
         return out;

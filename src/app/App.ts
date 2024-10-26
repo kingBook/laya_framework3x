@@ -10,16 +10,16 @@ export class App extends Laya.Script {
 
     declare owner: Laya.Sprite | Laya.Sprite3D;
 
-    private static _instance: App;
+    private static s_instance: App;
     private _eventManager: EventManager;
     private _fsm: AppFsm;
 
-    public static get instance(): App { return App._instance; }
+    public static get instance(): App { return App.s_instance; }
     public get fsm(): AppFsm { return this._fsm; }
     public get eventManager(): EventManager { return this._eventManager; }
 
     onAwake(): void {
-        App._instance=this;
+        App.s_instance=this;
         this._eventManager = NodeUtil.addNodeComponent(EventManager, this.owner);
         this._fsm = NodeUtil.addNodeComponent(AppFsm, this.owner);
     }
@@ -29,7 +29,7 @@ export class App extends Laya.Script {
     }
 
     onDestroy(): void {
-        App._instance = undefined;
+        App.s_instance = null;
     }
 
 
