@@ -1,9 +1,6 @@
 ﻿import { PlayerPrefs } from "../framework/runtime/utils/PlayerPrefs";
 
-const { regClass } = Laya;
-
-@regClass()
-export class LocalManager extends Laya.Script {
+export class LocalManager {
 
     /** 返回已解锁的关卡数字，默认：0 */
     public static get levelNumber(): number {
