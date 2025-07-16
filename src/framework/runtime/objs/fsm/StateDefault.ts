@@ -1,8 +1,7 @@
 import { State } from "./State";
 
-const { regClass, property } = Laya;
 
-@regClass()
+/** 默认状态 */
 export class StateDefault extends State {
 
 

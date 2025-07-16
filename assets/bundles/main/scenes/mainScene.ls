@@ -6,22 +6,10 @@
   "right": 0,
   "top": 0,
   "bottom": 0,
-  "name": "Scene2D_main",
+  "name": "mainScene",
+  "width": 1080,
+  "height": 720,
   "_$child": [
-    {
-      "_$id": "7ww6sjsk",
-      "_$type": "Scene3D",
-      "name": "Scene3D_main",
-      "skyRenderer": {
-        "meshType": "dome"
-      },
-      "ambientColor": {
-        "_$type": "Color",
-        "r": 0.212,
-        "g": 0.227,
-        "b": 0.259
-      }
-    },
     {
       "_$id": "ps7k4rcf",
       "_$type": "Sprite",

@@ -3,6 +3,8 @@ import { Fsm } from "../framework/runtime/objs/fsm/Fsm";
 import { State } from "../framework/runtime/objs/fsm/State";
 import { NodeUtil } from "../framework/runtime/utils/NodeUtil";
 import { GameFsm } from "./GameFsm";
+import { StateGameLevel } from "./StateGameLevel";
+import { StateGameTitle } from "./StateGameTitle";
 
 const { regClass, property } = Laya;
 
@@ -11,7 +13,6 @@ export class Game extends State {
 
     public static s_instance: Game;
 
-    declare owner: Laya.Sprite | Laya.Sprite3D;
     private _fsm: GameFsm;
 
     public static get instance(): Game { return Game.s_instance; };
@@ -19,10 +20,15 @@ export class Game extends State {
 
     public onStateEnter(fsm: Fsm): void {
         Game.s_instance = this;
-        this._fsm = NodeUtil.addNodeComponent(GameFsm, this.owner);
+
+        this._fsm = new GameFsm();
+        this._fsm.addState(StateGameTitle);
+        this._fsm.addState(StateGameLevel);
+        this._fsm.init();
+        this._fsm.changeStateTo(StateGameTitle);
     }
 
-    public onStateExit(fsm: Fsm): void {
+    public onStateExit(): void {
         Game.s_instance = null;
     }
 

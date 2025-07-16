@@ -4,6 +4,27 @@
     "designHeight": 720,
     "scaleMode": "fixedauto"
   },
+  "2D": {
+    "defaultFont": "res://9950aee5-3f9a-42dd-a272-7014c4d2e69e"
+  },
+  "physics2D": {
+    "defaultConfig": {
+      "allowSleeping": false,
+      "gravity": {
+        "x": 0,
+        "y": 9.8
+      },
+      "velocityIterations": 8,
+      "positionIterations": 3,
+      "pixelRatio": 50,
+      "debugDraw": true,
+      "drawShape": true,
+      "drawJoint": true,
+      "drawAABB": false,
+      "drawCenterOfMass": false,
+      "subStep": null
+    }
+  },
   "modules": {
     "_$type": true,
     "laya.d3": true,

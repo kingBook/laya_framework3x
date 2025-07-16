@@ -6,12 +6,14 @@
   "right": 0,
   "top": 0,
   "bottom": 0,
-  "name": "Scene2D_level",
+  "name": "levelScene2D",
+  "width": 1080,
+  "height": 720,
   "_$child": [
     {
       "_$id": "n9gjxcltvl",
       "_$type": "Scene3D",
-      "name": "Scene3D_level",
+      "name": "levelScene3D",
       "skyRenderer": {
         "meshType": "dome",
         "material": {
