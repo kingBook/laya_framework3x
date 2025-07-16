@@ -21,7 +21,7 @@ export class Game extends State {
     public onStateEnter(fsm: Fsm): void {
         Game.s_instance = this;
 
-        this._fsm = new GameFsm();
+        this._fsm = 
         this._fsm.addState(StateGameTitle);
         this._fsm.addState(StateGameLevel);
         this._fsm.init();

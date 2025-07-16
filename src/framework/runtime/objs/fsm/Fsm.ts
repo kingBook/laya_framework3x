@@ -2,9 +2,11 @@ import { IState } from "./IState";
 import { State } from "./State";
 import { StateDefault } from "./StateDefault";
 
+const { regClass, property } = Laya;
 
 /** 状态机类 */
-export class Fsm {
+@regClass()
+export class Fsm extends Laya.Script {
 
     /** 存储所有状态的字典 */
     protected _states: Map<string, IState> = new Map<string, IState>();

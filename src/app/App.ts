@@ -16,15 +16,15 @@ export class App extends Laya.Script {
 
     /** 整个应用的单例 */
     public static get instance(): App { return App.s_instance; }
-    
+
     /** 应用单例的状态机 */
     public get fsm(): AppFsm { return this._fsm; }
 
     public onAwake(): void {
         App.s_instance = this;
-        
+
         // 创建状态机
-        this._fsm = new AppFsm();
+        this._fsm = NodeUtil.addNewChildAndComponentToNode(this.owner, AppFsm);
         this._fsm.addState(Game);
         this._fsm.init();
         this._fsm.changeStateTo(Game);
