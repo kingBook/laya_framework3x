@@ -1,9 +1,11 @@
 import { Fsm } from "./Fsm";
 import { IState } from "./IState";
 
+const { regClass, property } = Laya;
 
 /** 状态类 */
-export class State implements IState {
+@regClass()
+export class State extends Laya.Script implements IState {
 
     /** 状态进入 */
     public onStateEnter(fsm: Fsm): void {

@@ -1,7 +1,7 @@
 
-import { Fsm } from "../framework/runtime/objs/fsm/Fsm";
-import { State } from "../framework/runtime/objs/fsm/State";
-import { NodeUtil } from "../framework/runtime/utils/NodeUtil";
+import { Fsm } from "../../framework/runtime/objs/fsm/Fsm";
+import { State } from "../../framework/runtime/objs/fsm/State";
+import { NodeUtil } from "../../framework/runtime/utils/NodeUtil";
 import { GameFsm } from "./GameFsm";
 import { StateGameLevel } from "./StateGameLevel";
 import { StateGameTitle } from "./StateGameTitle";
@@ -21,7 +21,7 @@ export class Game extends State {
     public onStateEnter(fsm: Fsm): void {
         Game.s_instance = this;
 
-        this._fsm = 
+        this._fsm = NodeUtil.addNewChildAndComponentToNode(this.owner, GameFsm);
         this._fsm.addState(StateGameTitle);
         this._fsm.addState(StateGameLevel);
         this._fsm.init();

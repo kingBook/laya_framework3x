@@ -1,6 +1,7 @@
-import { NodeUtil } from "../framework/runtime/utils/NodeUtil";
+import { NodeUtil } from "../../framework/runtime/utils/NodeUtil";
+import { Game } from "../game/Game";
 import { AppFsm } from "./AppFsm";
-import { Game } from "./Game";
+
 
 
 const { regClass, property } = Laya;
@@ -8,8 +9,6 @@ const { regClass, property } = Laya;
 /** 整个应用的单例 */
 @regClass()
 export class App extends Laya.Script {
-
-    declare owner: Laya.Sprite | Laya.Sprite3D;
 
     private static s_instance: App;
     private _fsm: AppFsm;
@@ -23,10 +22,11 @@ export class App extends Laya.Script {
     public onAwake(): void {
         App.s_instance = this;
 
-        // 创建状态机
+        // 状态机
         this._fsm = NodeUtil.addNewChildAndComponentToNode(this.owner, AppFsm);
         this._fsm.addState(Game);
         this._fsm.init();
+        // 切换到 Game 状态
         this._fsm.changeStateTo(Game);
     }
 

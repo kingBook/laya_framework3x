@@ -45,7 +45,7 @@ export class Fsm extends Laya.Script {
      * @param t 状态类型
      */
     public addState<T extends State>(t: new () => T): void {
-        let state = new t();
+        let state = this.owner.addComponent(t)
         this._states.set(t.prototype.constructor.name, state);
     }
 
@@ -93,9 +93,9 @@ export class Fsm extends Laya.Script {
     }
 
     public onDestroy(): void {
-        //this._currentState = undefined;
-        //this._onStateChanged = undefined;
-        //this._states = undefined;
+        //this._currentState = null;
+        //this._onStateChanged = null;
+        //this._states = null;
     }
 
 }

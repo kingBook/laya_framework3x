@@ -1,4 +1,4 @@
-import { NodeUtil } from "../framework/runtime/utils/NodeUtil";
+import { NodeUtil } from "../../framework/runtime/utils/NodeUtil";
 import { LevelFsm } from "./LevelFsm";
 
 
@@ -16,7 +16,7 @@ export class Level extends Laya.Script {
 
     onAwake(): void {
         Level.s_instance = this;
-        this._fsm = NodeUtil.addNewChildAndComponentToNode(LevelFsm, this.owner);
+        this._fsm = NodeUtil.addNewChildAndComponentToNode(this.owner, LevelFsm);
     }
 
     onDestroy(): void {

@@ -1,4 +1,4 @@
-import { State } from "../framework/runtime/objs/fsm/State";
+import { State } from "../../framework/runtime/objs/fsm/State";
 
 const { regClass, property } = Laya;
 

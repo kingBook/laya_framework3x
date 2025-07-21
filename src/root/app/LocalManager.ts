@@ -1,4 +1,4 @@
-﻿import { PlayerPrefs } from "../framework/runtime/utils/PlayerPrefs";
+﻿import { PlayerPrefs } from "../../framework/runtime/utils/PlayerPrefs";
 
 export class LocalManager {
 

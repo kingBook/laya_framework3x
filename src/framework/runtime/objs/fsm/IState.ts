@@ -1,5 +1,6 @@
 import { Fsm } from "./Fsm";
 
+/** 状态接口 */
 export interface IState {
 
     /** 状态进入 */
