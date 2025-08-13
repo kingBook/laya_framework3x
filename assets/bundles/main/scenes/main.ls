@@ -6,7 +6,7 @@
   "right": 0,
   "top": 0,
   "bottom": 0,
-  "name": "mainScene",
+  "name": "main",
   "width": 1080,
   "height": 720,
   "_$child": [
@@ -19,7 +19,7 @@
       "_$comp": [
         {
           "_$type": "913a39a9-4528-4307-b135-002d12110f3b",
-          "scriptPath": "../src/app/App.ts"
+          "scriptPath": "../src/root/app/App.ts"
         }
       ]
     }

@@ -6,14 +6,14 @@
   "right": 0,
   "top": 0,
   "bottom": 0,
-  "name": "levelScene2D",
+  "name": "level2d",
   "width": 1080,
   "height": 720,
   "_$child": [
     {
       "_$id": "n9gjxcltvl",
       "_$type": "Scene3D",
-      "name": "levelScene3D",
+      "name": "level3d",
       "skyRenderer": {
         "meshType": "dome",
         "material": {
@@ -100,8 +100,8 @@
       "height": 100,
       "_$comp": [
         {
-          "_$type": "6163e868-8df2-4571-80aa-1ba2601a6d15",
-          "scriptPath": "../src/current/game/Level.ts"
+          "_$type": "d418dd58-ab2d-4b36-941d-c4dfb782b863",
+          "scriptPath": "../src/root/level/Level.ts"
         }
       ],
       "_$child": [

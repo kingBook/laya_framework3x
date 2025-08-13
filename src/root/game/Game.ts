@@ -9,27 +9,24 @@ import { StateGameTitle } from "./StateGameTitle";
 const { regClass, property } = Laya;
 
 @regClass()
-export class Game extends State {
+export class Game extends Laya.Script {
 
-    public static s_instance: Game;
 
     private _fsm: GameFsm;
 
-    public static get instance(): Game { return Game.s_instance; };
     public get fsm(): GameFsm { return this._fsm; }
 
-    public onStateEnter(fsm: Fsm): void {
-        Game.s_instance = this;
-
+    public onAwake(): void {
+        
+        // 初始游戏状态机
         this._fsm = NodeUtil.addNewChildAndComponentToNode(this.owner, GameFsm);
         this._fsm.addState(StateGameTitle);
         this._fsm.addState(StateGameLevel);
         this._fsm.init();
+        // 切换到游戏标题状态
         this._fsm.changeStateTo(StateGameTitle);
     }
 
-    public onStateExit(): void {
-        Game.s_instance = null;
-    }
+    
 
 }
