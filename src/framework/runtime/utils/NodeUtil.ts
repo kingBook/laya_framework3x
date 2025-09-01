@@ -7,7 +7,7 @@ export class NodeUtil {
      * @param componentType 新的子节点挂载的组件
      * @returns 
      */
-    public static addNewChildAndComponentToNode<T extends Laya.Component>(node: Laya.Node, componentType: new () => T): T {
+    public static addChildAndComponentToNode<T extends Laya.Component>(node: Laya.Node, componentType: new () => T): T {
         let is3d = node instanceof Laya.Sprite3D;
         let child = is3d ? new Laya.Sprite3D() : new Laya.Sprite();
         child.name = componentType.prototype.constructor.name;

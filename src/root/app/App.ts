@@ -23,7 +23,7 @@ export class App extends Laya.Script {
         App.s_instance = this;
 
         // 状态机
-        this._game = NodeUtil.addNewChildAndComponentToNode(this.owner, Game);
+        this._game = NodeUtil.addChildAndComponentToNode(this.owner, Game);
 
     }
 

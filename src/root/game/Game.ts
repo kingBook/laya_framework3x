@@ -19,7 +19,7 @@ export class Game extends Laya.Script {
     public onAwake(): void {
         
         // 初始游戏状态机
-        this._fsm = NodeUtil.addNewChildAndComponentToNode(this.owner, GameFsm);
+        this._fsm = NodeUtil.addChildAndComponentToNode(this.owner, GameFsm);
         this._fsm.addState(StateGameTitle);
         this._fsm.addState(StateGameLevel);
         this._fsm.init();

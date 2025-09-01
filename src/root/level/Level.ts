@@ -16,7 +16,7 @@ export class Level extends Laya.Script {
 
     onAwake(): void {
         Level.s_instance = this;
-        this._fsm = NodeUtil.addNewChildAndComponentToNode(this.owner, LevelFsm);
+        this._fsm = NodeUtil.addChildAndComponentToNode(this.owner, LevelFsm);
     }
 
     onDestroy(): void {
