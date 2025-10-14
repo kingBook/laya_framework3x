@@ -8,7 +8,7 @@
   "enableSubpackages": true,
   "subpackages": [
     {
-      "path": "bundles/levelBasic"
+      "path": "bundles/levelGlobal"
     }
   ],
   "android": {

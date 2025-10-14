@@ -1,7 +1,5 @@
 
-import { Fsm } from "../../framework/runtime/objs/fsm/Fsm";
-import { State } from "../../framework/runtime/objs/fsm/State";
-import { NodeUtil } from "../../framework/runtime/utils/NodeUtil";
+import { NodeUtil } from "../../../../utils/NodeUtil";
 import { GameFsm } from "./GameFsm";
 import { StateGameLevel } from "./StateGameLevel";
 import { StateGameTitle } from "./StateGameTitle";

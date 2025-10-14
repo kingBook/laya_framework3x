@@ -1,8 +1,9 @@
-import { Fsm } from "../../framework/runtime/objs/fsm/Fsm";
+import { Fsm } from "../../../../global/fsm/Fsm";
 import { StateLevelFailure } from "./StateLevelFailure";
 import { StateLevelRunning } from "./StateLevelRunning";
 import { StateLevelStart } from "./StateLevelStart";
 import { StateLevelVictory } from "./StateLevelVictory";
+
 
 const { regClass, property } = Laya;
 

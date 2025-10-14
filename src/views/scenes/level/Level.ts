@@ -1,4 +1,4 @@
-import { NodeUtil } from "../../framework/runtime/utils/NodeUtil";
+import { NodeUtil } from "../../../utils/NodeUtil";
 import { LevelFsm } from "./LevelFsm";
 
 
