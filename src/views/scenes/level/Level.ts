@@ -1,5 +1,5 @@
 import { NodeUtil } from "../../../utils/NodeUtil";
-import { LevelFsm } from "./LevelFsm";
+import { LevelFsm } from "./fsm/LevelFsm";
 
 
 const { regClass, property } = Laya;
