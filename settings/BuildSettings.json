@@ -3,7 +3,7 @@
   "startupScene": "res://9b931ecf-fde9-44dd-acf3-15f8dc807965",
   "includedScenes": [],
   "alwaysIncluded": [
-    "bundles/main"
+    "bundles/app"
   ],
   "enableSubpackages": true,
   "subpackages": [
