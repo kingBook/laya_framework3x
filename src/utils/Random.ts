@@ -43,14 +43,15 @@ export class Random {
      * @param maxInt 整数，索引最大值
      * @returns 
      */
-    public static getRandomizeIndexes(minInt: number, maxInt: number): number[] {
+    private getRandomizeIndexes(minInt: number, maxInt: number, output?: number[]): number[] {
         minInt |= 0, maxInt |= 0;
-        let indexes: number[] = [];
+        output ||= [];
+        output.length = 0;
         for (let i = minInt; i <= maxInt; i++) {
-            indexes.push(i);
+            output.push(i);
         }
-        Random.randomizeArray(indexes);
-        return indexes;
+        this.randomizeArray(output);
+        return output;
     }
 
     /** 随机化的一个数组 */
