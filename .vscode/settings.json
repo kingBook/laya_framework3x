@@ -10,27 +10,27 @@
 	"editor.codeLens": false,
 	//"editor.fontSize": 11.5,
 	"editor.trimAutoWhitespace": false,
-	"editor.minimap.enabled": false,
+	//"editor.minimap.enabled": false,
 	"editor.insertSpaces": true,
 	//"editor.fontFamily": "Menlo, 'Courier New', monospace",
 	"files.eol": "\n",
-	"workbench.sideBar.location": "right",
-	"window.zoomLevel": 0,
-	"csharp.format.enable": true,
-	"files.encoding": "utf8bom",
-	"workbench.colorCustomizations": {
-        "[Default Light+]": {
-            "activityBar.background": "#dddddd",
-            "activityBar.foreground": "#333333"
-        },
-        "[One Monokai]": {
-            "editorHoverWidget.highlightForeground": "#2aaaff",
-			"editorLineNumber.foreground": "#818181"
-        }
-    },
-	"editor.semanticTokenColorCustomizations":{
-        "[One Monokai]": {
-            "enabled": true
-        }
-    }
+	//"workbench.sideBar.location": "right",
+	//"window.zoomLevel": 0,
+	//"csharp.format.enable": true,
+	//"files.encoding": "utf8bom",
+	// "workbench.colorCustomizations": {
+    //     "[Default Light+]": {
+    //         "activityBar.background": "#dddddd",
+    //         "activityBar.foreground": "#333333"
+    //     },
+    //     "[One Monokai]": {
+    //         "editorHoverWidget.highlightForeground": "#2aaaff",
+	// 		"editorLineNumber.foreground": "#818181"
+    //     }
+    // },
+	// "editor.semanticTokenColorCustomizations":{
+    //     "[One Monokai]": {
+    //         "enabled": true
+    //     }
+    // }
 }

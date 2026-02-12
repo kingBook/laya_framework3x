@@ -38,19 +38,19 @@ export class Random {
     }
 
     /**
-     * 获取一个随机的索引数组(索引不重复，可以是负数)，索引值区间为：[minInt, maxInt]
+     * 获取一个随机的索引数组(索引不重复，可以是负数)，索引值区间为：[minInt, maxInt)
      * @param minInt 整数，索引最小值
      * @param maxInt 整数，索引最大值
      * @returns 
      */
-    private getRandomizeIndexes(minInt: number, maxInt: number, output?: number[]): number[] {
+    private static getRandomizeIndexes(minInt: number, maxInt: number, output?: number[]): number[] {
         minInt |= 0, maxInt |= 0;
         output ||= [];
         output.length = 0;
-        for (let i = minInt; i <= maxInt; i++) {
+        for (let i = minInt; i < maxInt; i++) {
             output.push(i);
         }
-        this.randomizeArray(output);
+        Random.randomizeArray(output);
         return output;
     }
 
@@ -63,8 +63,8 @@ export class Random {
             length = collection.length;
         }
         for (let i = 0; i < length; i++) {
-            let randomIndex = Random.rangeInt(0, length);
-            let val = collection[i];
+            const randomIndex = Random.rangeInt(0, length);
+            const val = collection[i];
             collection[i] = collection[randomIndex];
             collection[randomIndex] = val;
         }

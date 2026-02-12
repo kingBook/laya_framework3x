@@ -15,7 +15,7 @@ export class StateLevelStart extends State {
         this._fsm = <LevelFsm>fsm;
 
 
-        this._fsm.changeStateTo(StateLevelRunning);
+        this._fsm.transitionTo(StateLevelRunning);
     }
 
     public override onStateExit(): void {

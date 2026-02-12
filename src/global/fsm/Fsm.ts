@@ -1,4 +1,3 @@
-import { IState } from "./IState";
 import { State } from "./State";
 import { StateDefault } from "./StateDefault";
 
@@ -9,35 +8,25 @@ const { regClass, property } = Laya;
 export class Fsm extends Laya.Script {
 
     /** 存储所有状态的字典 */
-    protected _states: Map<string, IState> = new Map<string, IState>();
-
-    /** 状态发生改变后的回调函数 */
-    protected _onStateChanged: (old: State, current: State) => void;
-    /** 状态改变后的回调函数绑定的 this 对象 */
-    protected _onStateChangedThis?: any;
+    protected _states: Map<string, State> = new Map<string, State>();
+    /** 状态切换后的回调函数 */
+    protected _onTransitioned: (old: State, current: State) => void;
     /** 当前状态 */
-    protected _currentState: IState;
-
-    /** 当前状态 */
-    public get currentState(): IState {
-        return this._currentState;
-    }
+    protected _currentState: State;
 
     /** 获取当前状态（指定状态类型）*/
-    public getCurrentState<T extends IState>(t: new () => T): T {
+    public getCurrentState<T extends State>(t: new () => T): T {
         return <T>this._currentState;
     }
 
     /**
-     * 初始化
-     * @param onStateChanged 状态改变后的回调函数
-     * @param onStateChangedThis 状态改变后的回调函数绑定的 this 对象
+     * 初始化状态
+     * @param onTransitioned 状态改变后的回调函数
      */
-    public init(onStateChanged?: (old: State, current: State) => void, onStateChangedThis?: any): void {
+    public initFsm(onTransitioned?: (old: State, current: State) => void): void {
         this.addState(StateDefault);
-        this._onStateChanged = onStateChanged;
-        this._onStateChangedThis = onStateChangedThis;
-        this.changeStateTo(StateDefault);
+        this._onTransitioned = onTransitioned;
+        this.transitionTo(StateDefault);
     }
 
     /**
@@ -45,7 +34,8 @@ export class Fsm extends Laya.Script {
      * @param t 状态类型
      */
     public addState<T extends State>(t: new () => T): void {
-        let state = this.owner.addComponent(t)
+        const state = this.owner.addComponent(t);
+        state.enabled = false;
         this._states.set(t.prototype.constructor.name, state);
     }
 
@@ -60,28 +50,33 @@ export class Fsm extends Laya.Script {
 
     /**
      * 切换到指定状态
-     * @param toState 目标状态名称
-     * @param onChanged 状态改变后的回调函数
-     * @param onChangedThis 状态改变后的回调函数绑定的 this 对象
+     * @param targetState 目标状态名称
+     * @param onTransitioned 状态改变后的回调函数
      */
-    public changeStateTo<T extends State>(toState: new () => T, onChanged?: (old: State, current: State) => void, onChangedThis?: any): void {
-        let state = this._states.get(toState.prototype.constructor.name);
+    public transitionTo<T extends State>(targetState: new () => T, onTransitioned?: (old: State, current: State) => void): void {
+        const state = this._states.get(targetState.prototype.constructor.name);
         if (state === undefined) {
-            throw new Error("状态 " + toState.prototype.constructor.name + " 未添加，使用 fsm.addState(StateClassName) 方法进行添加");
+            throw new Error("状态 " + targetState.prototype.constructor.name + " 未添加，使用 fsm.addState(StateClassName) 方法进行添加");
         }
-        // 状态相同时不取消切换
+        // 当前状态已是目标状态时，返回
         //if (this._currentState === state) return;
 
-        let old = this._currentState;
+        const old = this._currentState;
+
         // 状态退出
+        old && (old.enabled = false);
         old?.onStateExit();
+
         // 当前状态赋值新状态
         this._currentState = state;
+
         // 改变状态时的回调
-        this._onStateChanged?.call(this._onStateChangedThis, <State>old, <State>state);
-        onChanged?.call(onChangedThis, <State>old, <State>state);
+        this._onTransitioned?.call(null, old, state);
+        onTransitioned?.call(null, old, state);
+
         // 状态进入
-        this._currentState.onStateEnter(this);
+        state.enabled = true;
+        state.onStateEnter(this);
     }
 
     public onUpdate(): void {

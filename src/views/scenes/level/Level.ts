@@ -1,22 +1,32 @@
-import { NodeUtil } from "../../../utils/NodeUtil";
-import { LevelFsm } from "./fsm/LevelFsm";
+import { Fsm } from "../../../global/fsm/Fsm";
+import { StateLevelFailure } from "./state/StateLevelFailure";
+import { StateLevelRunning } from "./state/StateLevelRunning";
+import { StateLevelStart } from "./state/StateLevelStart";
+import { StateLevelVictory } from "./state/StateLevelVictory";
 
 
 const { regClass, property } = Laya;
 
 @regClass()
-export class Level extends Laya.Script {
+export class Level extends Fsm {
 
     private static s_instance: Level;
     declare owner: Laya.Sprite;
-    private _fsm: LevelFsm;
 
     public static get instance(): Level { return Level.s_instance }
-    public get fsm(): LevelFsm { return this._fsm; }
 
     onAwake(): void {
         Level.s_instance = this;
-        this._fsm = NodeUtil.addChildAndComponentToNode(this.owner, LevelFsm);
+
+        // 初始化状态机
+        this.addState(StateLevelStart);
+        this.addState(StateLevelRunning);
+        this.addState(StateLevelVictory);
+        this.addState(StateLevelFailure);
+        this.initFsm();
+        
+        // 切换到 关卡开始 状态
+        this.transitionTo(StateLevelStart);
     }
 
     onDestroy(): void {
